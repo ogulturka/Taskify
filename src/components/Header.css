@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    justify-content: space-between; /* Menü ve logout butonunu en uçlara yerleştirir */
+    align-items: center; /* Dikey hizalama */
+    padding: 10px 20px; /* Üst ve alt padding */
+    background-color: #aaacad; /* Header arka plan rengi */
+    color: white;
+    height: 60px; /* Header yüksekliği */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: left; /* Logo ve metin dikey olarak hizalanır */
+  }
+  
+  .logo h2 {
+    margin: 0; /* Margin sıfırlandı */
+    font-size: 24px; /* Logonun font boyutu */
+  }
+  
+  .navbar ul {
+    list-style-type: none; /* Noktalı listeyi kaldır */
+    margin: 0; /* Margin sıfırlandı */
+    padding: 0; /* Padding sıfırlandı */
+    display: flex; /* Menü öğelerini yatay sırala */
+  }
+  
+  .navbar ul li {
+    margin-right: 20px; /* Menü öğeleri arasındaki boşluk */
+  }
+  
+  .navbar ul li a {
+    color: white; /* Menü bağlantı rengi */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    font-weight: bold; /* Kalın yazı */
+    transition: color 0.3s; /* Renk geçişi için animasyon */
+  }
+  
+  .navbar ul li a:hover {
+    color: #ffcc00; /* Hover durumunda bağlantı rengi değişimi */
+  }
+  
+  .logout button {
+    background-color: #3698f4; /* Buton arka plan rengi */
+    color: white; /* Buton yazı rengi */
+    padding: 10px 20px; /* Butonun iç boşluğu */
+    border: none; /* Kenarlık yok */
+    border-radius: 5px; /* Yuvarlatılmış kenarlar */
+    cursor: pointer; /* İmleç işareti */
+    transition: background-color 0.3s; /* Hover durumu için animasyon */
+  }
+  
+  .logout button:hover {
+    background-color: #d32f2f; /* Hover durumunda buton rengi değişimi */
+  }
+  

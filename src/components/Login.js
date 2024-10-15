@@ -1,44 +1,57 @@
 import React, { useState } from 'react';
+import './Login.css';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // CSS dosyasını ekleyin
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loginMessage, setLoginMessage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username === 'admin' && password === 'password') {
-      navigate('/dashboard');
+    
+    const users = [{ username: 'admin', password: '123' }];
+    const foundUser = users.find(user => user.username === username && user.password === password);
+
+    if (foundUser) {
+      setLoginMessage('Giriş başarılı!');
+      setTimeout(() => {
+        onLogin(); // Giriş durumu güncelleniyor
+        navigate('/Dashboard'); // Ana Sayfa'ya yönlendiriliyor
+      }, 1000);
     } else {
-      alert('Invalid credentials');
+      alert('Kullanıcı adı veya şifre yanlış!');
     }
   };
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <div className="input-group">
-          <label>Username</label>
+      <form onSubmit={handleSubmit}>
+        <h2>Giriş Yap</h2>
+        <div className="form-group">
+          <label htmlFor="username">Kullanıcı Adı</label>
           <input 
             type="text" 
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
+            id="username" 
+            value={username} 
+            onChange={(e) => setUsername(e.target.value)} 
+            required 
           />
         </div>
-        <div className="input-group">
-          <label>Password</label>
+        <div className="form-group">
+          <label htmlFor="password">Şifre</label>
           <input 
             type="password" 
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+            id="password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+            required 
           />
         </div>
-        <button type="submit" className="login-button">Login</button>
+        <button type="submit">Giriş Yap</button>
+
+        {loginMessage && <p>{loginMessage}</p>}
       </form>
     </div>
   );

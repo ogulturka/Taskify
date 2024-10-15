@@ -1,48 +1,118 @@
+/* Dashboard.css */
 .dashboard-container {
-    padding: 20px;
-  }
-  
-  h2 {
-    color: #333;
-    text-align: center;
-  }
-  
-  .dashboard-stats {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .stat-card {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .stat-card h3 {
-    margin-bottom: 10px;
-  }
-  
-  .dashboard-charts {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-  }
-  
-  .chart-placeholder {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    width: 45%;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .chart-placeholder h3 {
-    margin-bottom: 10px;
-  }
-  
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: #2c3e50;
+  padding: 20px;
+  height: 100vh;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 20px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  margin-right: 10px;
+}
+
+.menu li:hover {
+  background-color: #c4cbd1;
+  padding: 5px;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #3b54a7;
+  min-height: 100vh;
+}
+
+.sidebar ul.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul.menu li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul.menu li a {
+  color: #234481;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul.menu li a .menu-icon {
+  margin-right: 10px;
+}
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: #13115c;
+  padding: 20px;
+  position: fixed; /* Sabit sidebar */
+  top: 0;
+  left: 0;
+  height: 100%; /* Tüm yüksekliği kaplar */
+}
+
+.sidebar ul.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul.menu li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul.menu li a {
+  color: #252858;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul.menu li a .menu-icon {
+  margin-right: 10px;
+}
+
+.content {
+  margin-left: 250px; /* Sidebar genişliği kadar boşluk bırak */
+  padding: 20px;
+  background-color: #1a0e50;
+  width: calc(100% - 250px); /* Geri kalan alanı doldur */
+}

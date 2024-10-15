@@ -1,0 +1,29 @@
+
+.sidebar {
+    width: 250px;
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+  }
+  
+  .sidebar-logo {
+    width: 80%; /* İsteğe bağlı boyut ayarı */
+    margin-bottom: 20px; /* Yazı ile logo arasında boşluk bırakma */
+    display: block;
+    margin-left: auto; /* Ortalamak için */
+    margin-right: auto; /* Ortalamak için */
+  }
+  
+  h2 {
+    text-align: center; /* Başlığı ortalamak için */
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 10px 0;
+  }
+  
