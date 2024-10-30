@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Masraf.css'; 
+import './İzin.css'; 
 
-const Masraf = () => {
+const İzin = () => {
   const [izinTipi, setIzinTipi] = useState('Günlük İzin');
   const [izinTuru, setIzinTuru] = useState('Yıllık İzin');
   const [startDate, setStartDate] = useState('2024-10-01');
@@ -28,7 +28,6 @@ const Masraf = () => {
     <div className="expense-report">
       <h2>İzin Parametreleri</h2>
 
-      {/* Tarih Seçimi */}
       <div className="date-selection">
         <label>Başlangıç Tarihi</label>
         <input 
@@ -47,7 +46,6 @@ const Masraf = () => {
         />
       </div>
 
-      {/* İzin Tipi Seçimi */}
       <div className="izin-tipi">
         <h4>İzin Tipini Seçin</h4>
         <select value={izinTipi} onChange={e => setIzinTipi(e.target.value)}>
@@ -56,7 +54,6 @@ const Masraf = () => {
         </select>
       </div>
 
-      {/* İzin Türü Seçimi */}
       <div className="izin-turu">
         <h4>İzin Türünü Seçin</h4>
         <select value={izinTuru} onChange={e => setIzinTuru(e.target.value)}>
@@ -66,7 +63,6 @@ const Masraf = () => {
         </select>
       </div>
 
-      {/* Kaydet Butonu */}
       <div className="save-button">
         <button onClick={handleSave}>Kaydet</button>
       </div>
@@ -74,4 +70,4 @@ const Masraf = () => {
   );
 };
 
-export default Masraf;
+export default İzin;

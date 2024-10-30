@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
@@ -8,7 +8,20 @@ import Masraf from './components/pages/Masraf';
 import İzin from './components/pages/İzin';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true); // Yüklenme durumu
+
+  useEffect(() => {
+    const loggedInStatus = localStorage.getItem('isLoggedIn');
+    if (loggedInStatus === 'true') {
+      setIsLoggedIn(true);
+    }
+    setLoading(false); // Yüklenme durumunu tamamla
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; 
+  }
 
   const handleLogin = () => {
     localStorage.setItem('isLoggedIn', 'true');
@@ -19,8 +32,6 @@ function App() {
     localStorage.removeItem('isLoggedIn');
     setIsLoggedIn(false);
   };
-
-  
 
   return (
     <Router>
@@ -35,9 +46,9 @@ function App() {
             <Route path="/dashboard" element={<Dashboard onLogout={handleLogout} />}>
               <Route path="anasayfa" element={<AnaSayfa />} />
               <Route path="aktivite" element={<Aktivite />} />
-              <Route path="masraf" element={<Masraf />} /> {/* Masraf sayfasını burada tanımlıyoruz */}
-              <Route path="izin" element={<İzin />} /> 
-              <Route index element={<Navigate to="anasayfa" />} /> {/* Default yönlendirme */}
+              <Route path="masraf" element={<Masraf />} />
+              <Route path="izin" element={<İzin />} />
+              <Route index element={<Navigate to="anasayfa" />} />
             </Route>
             <Route path="*" element={<Navigate to="/dashboard" />} />
           </>

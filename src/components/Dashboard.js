@@ -45,9 +45,8 @@ const Dashboard = ({ onLogout }) => {
         </ul>
       </div>
 
-      {/* İçerik kısmı buraya geliyor */}
       <div className="content">
-        <Outlet /> {/* Dinamik içerik burada değişecek */}
+        <Outlet /> 
       </div>
     </div>
   );

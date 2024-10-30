@@ -40,7 +40,7 @@ const Aktivite = () => {
 
   return (
     <div className="aktivite-container">
-      {/* Takvim */}
+      
       <div className="calendar">
         <div className="calendar-header">
           <button className="prev-month">‹</button>
@@ -70,13 +70,12 @@ const Aktivite = () => {
                 <td className="day" onClick={() => handleDayClick('05-10-2024')}>5 Eki</td>
                 <td className="day" onClick={() => handleDayClick('06-10-2024')}>6 Eki</td>
               </tr>
-              {/* Daha fazla gün ekleyebilirsin */}
+
             </tbody>
           </table>
         </div>
       </div>
 
-      {/* Aktivite Girişi */}
       {selectedDate && (
         <div className="activity-form">
           <h3>Aktivite Girişi - {selectedDate}</h3>

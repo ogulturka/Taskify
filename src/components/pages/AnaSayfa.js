@@ -7,12 +7,12 @@ const AnaSayfa = () => {
     <div className="ana-sayfa-container">
       <h2>2024 Aktivite Müşteri Dağılımı</h2>
       <div className="grafikler">
-        {/* Grafikleri buraya yerleştir */}
+        {/* Grafikler */}
         <div className="grafik1">
-          {/* Aktivite Saatleri ve Fatura Saatleri için bir grafik */}
+        {/* Grafikler */}
         </div>
         <div className="grafik2">
-          {/* Aktivite/Fatura Performans grafiği */}
+        {/* Grafikler */}
         </div>
       </div>
 
@@ -26,7 +26,7 @@ const AnaSayfa = () => {
 
         <div className="takvim">
           <h3>Takvim</h3>
-          {/* Takvim bileşeni */}
+          {/* Takvim */}
         </div>
 
         <div className="izin-durumu">
@@ -38,7 +38,6 @@ const AnaSayfa = () => {
 
       <div className="izinliler">
         <h3>Bugün İzinli Olanlar</h3>
-        {/* İzinli çalışanların listesi */}
       </div>
     </div>
   );

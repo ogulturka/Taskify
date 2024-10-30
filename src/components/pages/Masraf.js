@@ -9,7 +9,6 @@ const Masraf = () => {
   
   // Formu kaydetme
   const handleSave = () => {
-    // Kaydetme işlemini burada yapabilirsiniz
     console.log('Seçilen Masraf Tipleri:', masrafTipi);
     console.log('Başlangıç Tarihi:', startDate);
     console.log('Bitiş Tarihi:', endDate);
@@ -19,7 +18,6 @@ const Masraf = () => {
     <div className="expense-report">
       <h2>Masraf Parametreleri</h2>
 
-      {/* Tarih Seçimi */}
       <div className="date-selection">
         <label>Başlangıç Tarihi</label>
         <input 
@@ -38,7 +36,6 @@ const Masraf = () => {
         />
       </div>
 
-      {/* Masraf Tipi Seçimi */}
       <div className="masraf-tipi">
         <h4>Masraf Tipini Seçin</h4>
         <select value={masrafTipi} onChange={e => setmasrafTipi(e.target.value)}>
@@ -51,9 +48,6 @@ const Masraf = () => {
         </select>
       </div>
 
-
-
-      {/* Kaydet Butonu */}
       <div className="save-button">
         <button onClick={handleSave}>Kaydet</button>
       </div>
